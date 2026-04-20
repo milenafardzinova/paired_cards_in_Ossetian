@@ -1,0 +1,1 @@
+# paired_cards_in_Ossetian
