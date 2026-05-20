@@ -26,9 +26,22 @@ namespace project_paired_cards_in_Ossetian
 
         private void ThemeButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBoxName.Text))
+            {
+                MessageBox.Show("Введите Ваше имя");
+                return;
+            }
+            Button clickedBotton = (Button)sender;
+            if (clickedBotton == buttonAnimals)
+                PlayerData.SelectedTheme = "Animals";
+            else if (clickedBotton == buttonFood)
+                PlayerData.SelectedTheme = "Food";
+
+            PlayerData.Name = textBoxName.Text;
+
             FormLevelSelect levelForm = new FormLevelSelect();
             levelForm.Show();
-            this.Hide();
+            //this.Hide();
         }
     }
 }

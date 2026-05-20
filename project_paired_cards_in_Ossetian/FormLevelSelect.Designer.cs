@@ -109,7 +109,7 @@
             this.Controls.Add(this.buttonEasyLevel);
             this.Controls.Add(this.pictureBoxBackground);
             this.Name = "FormLevelSelect";
-            this.Text = "FormLevelSelect";
+            this.Text = "Выбор уровня сложности / Зындзинады ӕмвӕзад равзарын\n\n";
             this.Load += new System.EventHandler(this.FormLevelSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).EndInit();
             this.ResumeLayout(false);

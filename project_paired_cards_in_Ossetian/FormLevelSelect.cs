@@ -24,9 +24,19 @@ namespace project_paired_cards_in_Ossetian
 
         private void LevelSelectBotton_Click(object sender, EventArgs e)
         {
+            Button clickedButton = (Button)sender;
+
+            if (clickedButton == buttonEasyLevel)
+                PlayerData.SelectedLevel = 1;
+            else if (clickedButton == buttonMiddleLevel)
+                PlayerData.SelectedLevel = 2;
+            else
+                PlayerData.SelectedLevel = 3;
+
+
             FormGame formGame = new FormGame();
             formGame.Show();
-            this.Hide();
+            //this.Hide();
         }
     }
 }
