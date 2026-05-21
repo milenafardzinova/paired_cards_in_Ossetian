@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             this.dataGridViewField = new System.Windows.Forms.DataGridView();
-            this.buttonSoundSwitch = new System.Windows.Forms.Button();
-            this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonSoundSwitch = new System.Windows.Forms.Button();
+            this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
             this.SuspendLayout();
@@ -65,26 +65,7 @@
             this.dataGridViewField.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewField.Size = new System.Drawing.Size(543, 554);
             this.dataGridViewField.TabIndex = 10;
-            // 
-            // buttonSoundSwitch
-            // 
-            this.buttonSoundSwitch.Location = new System.Drawing.Point(743, 21);
-            this.buttonSoundSwitch.Name = "buttonSoundSwitch";
-            this.buttonSoundSwitch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSoundSwitch.TabIndex = 11;
-            this.buttonSoundSwitch.Text = "buttonSoundSwitch";
-            this.buttonSoundSwitch.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxBackground
-            // 
-            this.pictureBoxBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxBackground.BackgroundImage")));
-            this.pictureBoxBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBackground.Name = "pictureBoxBackground";
-            this.pictureBoxBackground.Size = new System.Drawing.Size(1101, 631);
-            this.pictureBoxBackground.TabIndex = 12;
-            this.pictureBoxBackground.TabStop = false;
+            this.dataGridViewField.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewField_CellClick);
             // 
             // Column1
             // 
@@ -121,6 +102,26 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Width = 105;
+            // 
+            // buttonSoundSwitch
+            // 
+            this.buttonSoundSwitch.Location = new System.Drawing.Point(743, 21);
+            this.buttonSoundSwitch.Name = "buttonSoundSwitch";
+            this.buttonSoundSwitch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSoundSwitch.TabIndex = 11;
+            this.buttonSoundSwitch.Text = "buttonSoundSwitch";
+            this.buttonSoundSwitch.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxBackground
+            // 
+            this.pictureBoxBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxBackground.BackgroundImage")));
+            this.pictureBoxBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxBackground.Name = "pictureBoxBackground";
+            this.pictureBoxBackground.Size = new System.Drawing.Size(1101, 631);
+            this.pictureBoxBackground.TabIndex = 12;
+            this.pictureBoxBackground.TabStop = false;
             // 
             // FormGame
             // 
