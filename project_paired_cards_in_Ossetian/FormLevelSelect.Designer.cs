@@ -77,6 +77,7 @@
             // 
             // labelLevelSelect
             // 
+            this.labelLevelSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelLevelSelect.AutoSize = true;
             this.labelLevelSelect.BackColor = System.Drawing.Color.Transparent;
             this.labelLevelSelect.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

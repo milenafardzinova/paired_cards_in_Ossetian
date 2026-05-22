@@ -16,6 +16,13 @@ namespace project_paired_cards_in_Ossetian
         public Card FirstSelectedCard {  get; private set; }
         public Card SecondSelectedCard { get; private set; }
 
+        public enum TurnResult
+        {
+            FirstCardOpened,//открыта только первая карта
+            MatchFound,//открыта вторая карта и пары совпали
+            WrongPair //открыта вторая карта и карты разные
+        }
+
         public GameField()
         {
             CreateField();
@@ -38,7 +45,7 @@ namespace project_paired_cards_in_Ossetian
             return cardNames;
         }
 
-        private void LoadLanguageCardPairs()
+        private void LoadLanguageCardPairs()//добавляет в список карт 8 рандомных карт и их пары
         {
             cards.Clear();
             List<string> allNames = GetCardNamesFromfolder();
@@ -98,6 +105,58 @@ namespace project_paired_cards_in_Ossetian
         public Card GetCardAt(int row, int col)
         {
             return cardGrid[row, col];
+        }
+
+        public void ResetTurn()
+        {
+            FirstSelectedCard = null;
+            SecondSelectedCard = null;
+        }
+
+        public TurnResult SelectCard(Card clickedCard)
+        {
+            if (FirstSelectedCard == null)
+            {
+                FirstSelectedCard = clickedCard;
+                FirstSelectedCard.Open();
+
+                return TurnResult.FirstCardOpened;
+            }
+
+            //если это вторая открытая карта в этом ходе
+            SecondSelectedCard = clickedCard;
+            SecondSelectedCard.Open();
+
+            if (FirstSelectedCard.IsPairFor(SecondSelectedCard))
+            {
+                FirstSelectedCard.MarkAsMatched();
+                SecondSelectedCard.MarkAsMatched();
+                return TurnResult.MatchFound;
+            }
+
+            //иначе карты разные
+            return TurnResult.WrongPair;
+        }
+
+        public bool CheckWinCondition()
+        {
+            foreach (Card card in cardGrid)
+            {
+                //если нашли карточку, у которой пара еще не найдена, значит продолжаем игру
+                if (card != null && !card.IsMatched)
+                {
+                    return false;
+                }
+            }
+            //иначе победа
+            return true;
+        }
+
+        public void CloseUnmatchedCards()
+        {
+            if (FirstSelectedCard != null) FirstSelectedCard.Close(); 
+            if (SecondSelectedCard != null) SecondSelectedCard.Close();
+            ResetTurn();
         }
     }
 }
