@@ -63,26 +63,6 @@ namespace project_paired_cards_in_Ossetian.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dargavs {
-            get {
-                object obj = ResourceManager.GetObject("dargavs", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lake {
-            get {
-                object obj = ResourceManager.GetObject("lake", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap letter {
             get {
                 object obj = ResourceManager.GetObject("letter", resourceCulture);
@@ -93,9 +73,9 @@ namespace project_paired_cards_in_Ossetian.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap letter1 {
+        internal static System.Drawing.Bitmap monastery {
             get {
-                object obj = ResourceManager.GetObject("letter1", resourceCulture);
+                object obj = ResourceManager.GetObject("monastery", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -39,7 +39,7 @@
             // buttonEasyLevel
             // 
             this.buttonEasyLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonEasyLevel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonEasyLevel.BackColor = System.Drawing.Color.NavajoWhite;
             this.buttonEasyLevel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEasyLevel.Location = new System.Drawing.Point(406, 147);
             this.buttonEasyLevel.Name = "buttonEasyLevel";
@@ -52,7 +52,7 @@
             // buttonMiddleLevel
             // 
             this.buttonMiddleLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonMiddleLevel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonMiddleLevel.BackColor = System.Drawing.Color.NavajoWhite;
             this.buttonMiddleLevel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMiddleLevel.Location = new System.Drawing.Point(406, 248);
             this.buttonMiddleLevel.Name = "buttonMiddleLevel";
@@ -65,7 +65,7 @@
             // buttonDifficult
             // 
             this.buttonDifficult.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonDifficult.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonDifficult.BackColor = System.Drawing.Color.NavajoWhite;
             this.buttonDifficult.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDifficult.Location = new System.Drawing.Point(406, 351);
             this.buttonDifficult.Name = "buttonDifficult";
@@ -81,8 +81,8 @@
             this.labelLevelSelect.AutoSize = true;
             this.labelLevelSelect.BackColor = System.Drawing.Color.Transparent;
             this.labelLevelSelect.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLevelSelect.ForeColor = System.Drawing.Color.Black;
-            this.labelLevelSelect.Location = new System.Drawing.Point(343, 79);
+            this.labelLevelSelect.ForeColor = System.Drawing.Color.Bisque;
+            this.labelLevelSelect.Location = new System.Drawing.Point(322, 79);
             this.labelLevelSelect.Name = "labelLevelSelect";
             this.labelLevelSelect.Size = new System.Drawing.Size(436, 26);
             this.labelLevelSelect.TabIndex = 13;
@@ -90,7 +90,7 @@
             // 
             // pictureBoxBackground
             // 
-            this.pictureBoxBackground.BackgroundImage = global::project_paired_cards_in_Ossetian.Properties.Resources.lake;
+            this.pictureBoxBackground.BackgroundImage = global::project_paired_cards_in_Ossetian.Properties.Resources.monastery;
             this.pictureBoxBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
