@@ -13,6 +13,8 @@ namespace project_paired_cards_in_Ossetian
         private List<Card> cards = new List<Card>();
 
         private Random rnd = new Random();
+        private string currentTheme;
+        private int currentLevel;
         public Card FirstSelectedCard {  get; private set; }
         public Card SecondSelectedCard { get; private set; }
 
@@ -23,16 +25,18 @@ namespace project_paired_cards_in_Ossetian
             WrongPair //открыта вторая карта и карты разные
         }
 
-        public GameField()
+        public GameField(string theme, int level)
         {
+            this.currentTheme = theme;
+            this.currentLevel = level;
             CreateField();
         }
 
         private List<string> GetCardNamesFromfolder()//возвращает список имнен всех картинок
         {
             List<string> cardNames = new List<string>();
-            string theme = PlayerData.SelectedTheme;
-            int level = PlayerData.SelectedLevel;
+            string theme = currentTheme;
+            int level = currentLevel;
 
             string folderpath = $"images/cards/russian/{theme}/{level}Level";
             string[] fullPaths = Directory.GetFiles(folderpath, "*.png");
@@ -63,8 +67,8 @@ namespace project_paired_cards_in_Ossetian
 
             for(int i = 0;i< 8;i++)
             {
-                Card russianCard = new Card(selectedNames[i], "russian");
-                Card ossetianCard = new Card(selectedNames[i], "ossetian");
+                Card russianCard = new Card(selectedNames[i], "russian", currentTheme, currentLevel);
+                Card ossetianCard = new Card(selectedNames[i], "ossetian", currentTheme, currentLevel);
 
                 cards.Add(russianCard);
                 cards.Add(ossetianCard);

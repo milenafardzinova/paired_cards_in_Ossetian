@@ -5,25 +5,36 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Numerics;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
 using static project_paired_cards_in_Ossetian.GameField;
 
 namespace project_paired_cards_in_Ossetian
 {
     public partial class FormGame : Form
     {
-        private GameField gameField = new GameField();
-        public FormGame()
+        private GameField gameField;
+        private PlayerData currentPlayer;
+        private string selectedTheme;
+        private int selectedLevel;
+        public static bool IsSoundEnabled { get; set; } = true;
+
+        public FormGame(PlayerData player, string theme, int level)
         {
             InitializeComponent();
-            
+            this.currentPlayer = player;
+            this.selectedTheme = theme;
+            this.selectedLevel = level;
         }
 
         private void FormGame_Load(object sender, EventArgs e)
         {
             this.DoubleBuffered = true;//чтобы при перевороте карточек экран не мерцал
+            gameField = new GameField(selectedTheme, selectedLevel);
             CreateField();
         }
 
@@ -83,11 +94,31 @@ namespace project_paired_cards_in_Ossetian
                 case TurnResult.MatchFound:
                     if (gameField.CheckWinCondition())
                     {
-                        MessageBox.Show($"Поздравляем, {PlayerData.Name}! Вы победили!");
-                        if (PlayerData.SelectedLevel == PlayerData.MaxUnlockedLevel && PlayerData.MaxUnlockedLevel < 3)
+                        MessageBox.Show($"Поздравляем, {currentPlayer.Name}! Вы победили!");
+
+                        if (selectedTheme == "Animals")
                         {
-                            PlayerData.MaxUnlockedLevel++;
+                            if (selectedLevel == currentPlayer.MaxUnlockedAnimals && currentPlayer.MaxUnlockedAnimals < 3)
+                            {
+                                currentPlayer.MaxUnlockedAnimals++;
+                            }
                         }
+                        else if (selectedTheme == "Food")
+                        {
+                            if (selectedLevel == currentPlayer.MaxUnlockedFood && currentPlayer.MaxUnlockedFood < 3)
+                            {
+                                currentPlayer.MaxUnlockedFood++;
+                            }
+                        }
+
+                        var repository = FormChooseTheme.ReadFromFile("saves.json");
+                        repository.Add(currentPlayer);
+
+                        string json = JsonSerializer.Serialize(repository);
+
+                        StreamWriter sw = new StreamWriter("saves.json");
+                        sw.Write(json);
+                        sw.Close();
                         this.Close();
                     }
                     gameField.ResetTurn();//очищает ссылки на первую и вторую открытую карту(чтобы повторно были новые первая и вторая карта)

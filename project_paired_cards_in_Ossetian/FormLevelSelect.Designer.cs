@@ -30,7 +30,7 @@
         {
             this.buttonEasyLevel = new System.Windows.Forms.Button();
             this.buttonMiddleLevel = new System.Windows.Forms.Button();
-            this.buttonDifficult = new System.Windows.Forms.Button();
+            this.buttonHardLevel = new System.Windows.Forms.Button();
             this.labelLevelSelect = new System.Windows.Forms.Label();
             this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
@@ -62,18 +62,18 @@
             this.buttonMiddleLevel.UseVisualStyleBackColor = false;
             this.buttonMiddleLevel.Click += new System.EventHandler(this.LevelSelectBotton_Click);
             // 
-            // buttonDifficult
+            // buttonHardLevel
             // 
-            this.buttonDifficult.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonDifficult.BackColor = System.Drawing.Color.NavajoWhite;
-            this.buttonDifficult.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDifficult.Location = new System.Drawing.Point(406, 351);
-            this.buttonDifficult.Name = "buttonDifficult";
-            this.buttonDifficult.Size = new System.Drawing.Size(271, 55);
-            this.buttonDifficult.TabIndex = 12;
-            this.buttonDifficult.Text = "Сложный / Зын";
-            this.buttonDifficult.UseVisualStyleBackColor = false;
-            this.buttonDifficult.Click += new System.EventHandler(this.LevelSelectBotton_Click);
+            this.buttonHardLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonHardLevel.BackColor = System.Drawing.Color.NavajoWhite;
+            this.buttonHardLevel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonHardLevel.Location = new System.Drawing.Point(406, 351);
+            this.buttonHardLevel.Name = "buttonHardLevel";
+            this.buttonHardLevel.Size = new System.Drawing.Size(271, 55);
+            this.buttonHardLevel.TabIndex = 12;
+            this.buttonHardLevel.Text = "Сложный / Зын";
+            this.buttonHardLevel.UseVisualStyleBackColor = false;
+            this.buttonHardLevel.Click += new System.EventHandler(this.LevelSelectBotton_Click);
             // 
             // labelLevelSelect
             // 
@@ -105,7 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 631);
             this.Controls.Add(this.labelLevelSelect);
-            this.Controls.Add(this.buttonDifficult);
+            this.Controls.Add(this.buttonHardLevel);
             this.Controls.Add(this.buttonMiddleLevel);
             this.Controls.Add(this.buttonEasyLevel);
             this.Controls.Add(this.pictureBoxBackground);
@@ -123,7 +123,7 @@
         private System.Windows.Forms.PictureBox pictureBoxBackground;
         private System.Windows.Forms.Button buttonEasyLevel;
         private System.Windows.Forms.Button buttonMiddleLevel;
-        private System.Windows.Forms.Button buttonDifficult;
+        private System.Windows.Forms.Button buttonHardLevel;
         private System.Windows.Forms.Label labelLevelSelect;
     }
 }

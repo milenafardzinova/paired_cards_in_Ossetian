@@ -15,11 +15,15 @@ namespace project_paired_cards_in_Ossetian
         public Image Image { get; set; }
         public bool IsOpened { get; private set; }  = false; 
         public bool IsMatched { get; private set; }
+        private string cardTheme;
+        private int cardLevel;
 
-        public Card(string name,string language) 
+        public Card(string name,string language, string theme, int level) 
         { 
             Name= name;
             Language= language;
+            this.cardTheme = theme;
+            this.cardLevel = level;
             string path = GetImagePath();
             //если существует путь к файлу, то выводить картинку, иначе показываем рубашку
             if (File.Exists(path))
@@ -33,8 +37,9 @@ namespace project_paired_cards_in_Ossetian
 
         public string GetImagePath()
         {
-            string theme = PlayerData.SelectedTheme;
-            int level = PlayerData.SelectedLevel;
+            string theme = cardTheme;
+            int level = cardLevel;
+
             if (level == 3 && Language == "ossetian")
             {
                 level = 2;

@@ -8,10 +8,27 @@ namespace project_paired_cards_in_Ossetian
 {
     public class PlayerData
     {
-        public static string Name { get; set;  }
-        public static string SelectedTheme {  get; set; }
-        public static int SelectedLevel { get; set;  }
-        public static int MaxUnlockedLevel {  get; set; }
-        public static bool IsSoundEnabled { get; set; } = true;
+        public string Name { get; set;  }
+        public int MaxUnlockedAnimals { get; set; } = 1;
+        public int MaxUnlockedFood { get; set; } = 1;
+        public PlayerData() { }
+        public PlayerData(string name, int defaultLevel)
+        {
+            this.Name = name;
+            this.MaxUnlockedAnimals = defaultLevel;
+            this.MaxUnlockedFood = defaultLevel;
+        }
+        public void Update(PlayerData newPlayerData)
+        {
+            if (this.MaxUnlockedAnimals < newPlayerData.MaxUnlockedAnimals)
+            {
+                this.MaxUnlockedAnimals = newPlayerData.MaxUnlockedAnimals;
+            }
+
+            if (this.MaxUnlockedFood < newPlayerData.MaxUnlockedFood)
+            {
+                this.MaxUnlockedFood = newPlayerData.MaxUnlockedFood;
+            }
+        }
     }
 }
