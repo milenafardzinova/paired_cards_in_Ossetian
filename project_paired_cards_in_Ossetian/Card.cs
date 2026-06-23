@@ -35,6 +35,10 @@ namespace project_paired_cards_in_Ossetian
         {
             string theme = PlayerData.SelectedTheme;
             int level = PlayerData.SelectedLevel;
+            if (level == 3 && Language == "ossetian")
+            {
+                level = 2;
+            }
             string path = $"images/cards/{Language}/{theme}/{level}Level/{Name}.png";
             return path ;
         }
