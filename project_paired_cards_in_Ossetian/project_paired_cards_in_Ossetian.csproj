@@ -215,9 +215,6 @@
     <Content Include="images\cards\ossetian\animals\1Level\snake.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\cards\ossetian\animals\1Level\swallow.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="images\cards\ossetian\animals\1Level\wolf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -282,9 +279,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\cards\ossetian\animals\2Level\snake.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\cards\ossetian\animals\2Level\swallow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\cards\ossetian\animals\2Level\wolf.png">
@@ -503,9 +497,6 @@
     <Content Include="images\cards\russian\animals\1Level\snake.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\cards\russian\animals\1Level\swallow.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="images\cards\russian\animals\1Level\wolf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -572,9 +563,6 @@
     <Content Include="images\cards\russian\animals\2Level\snake.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\cards\russian\animals\2Level\swallow.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="images\cards\russian\animals\2Level\wolf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -639,9 +627,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\cards\russian\animals\3Level\snake.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\cards\russian\animals\3Level\swallow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\cards\russian\animals\3Level\wolf.png">
