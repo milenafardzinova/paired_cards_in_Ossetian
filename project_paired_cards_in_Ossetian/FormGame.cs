@@ -73,17 +73,16 @@ namespace project_paired_cards_in_Ossetian
             int col = e.ColumnIndex;
 
             Card clickedCard = gameField.GetCardAt(row, col);
-            if (clickedCard.IsMatched) return;
-            if (clickedCard.IsOpened)
+            if (clickedCard.IsOpened || clickedCard.IsMatched)
             {
-                //clickedCard.PlayVoice(); МЕТОД ДЛЯ ПОВТОРНОЙ ОЗВУЧКИ УЖЕ ОТКРЫТОЙ КАРТЫ(у которой нет пары)
+                SoundManager.PlayVoice(clickedCard);//повторная озвучка уже открыой карты(у которой нет пары, или уже для угаданноцй пары)
                 dataGridViewField.ClearSelection();//убираем синее выделение ячейки
                 return;
             }
 
             TurnResult result = gameField.SelectCard(clickedCard);
             dataGridViewField[col, row].Value = clickedCard.Image;
-            //clickedCard.PlayVoice();
+            SoundManager.PlayVoice(clickedCard);//для озвучки карточки при её первом перевороте
             dataGridViewField.ClearSelection();
 
             switch (result)
@@ -155,6 +154,23 @@ namespace project_paired_cards_in_Ossetian
                         dataGridViewField[col, row].Value = back;
                     }
                 }
+            }
+        }
+
+        private void buttonSoundSwitch_Click(object sender, EventArgs e)
+        {
+            IsSoundEnabled = !IsSoundEnabled;
+            if (IsSoundEnabled)
+            {
+                string soundOnPicturePath = "images/soundOn.jpg";
+                buttonSoundSwitch.BackgroundImage = Image.FromFile(soundOnPicturePath);
+                buttonSoundSwitch.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            else
+            {
+                string soundOffPicturePath = "images/soundOff.jpg";
+                buttonSoundSwitch.BackgroundImage = Image.FromFile(soundOffPicturePath);
+                buttonSoundSwitch.BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
     }

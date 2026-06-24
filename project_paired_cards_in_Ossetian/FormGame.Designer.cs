@@ -105,12 +105,15 @@
             // 
             // buttonSoundSwitch
             // 
-            this.buttonSoundSwitch.Location = new System.Drawing.Point(743, 21);
+            this.buttonSoundSwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSoundSwitch.BackgroundImage = global::project_paired_cards_in_Ossetian.Properties.Resources.soundOn;
+            this.buttonSoundSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSoundSwitch.Location = new System.Drawing.Point(762, 12);
             this.buttonSoundSwitch.Name = "buttonSoundSwitch";
-            this.buttonSoundSwitch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSoundSwitch.Size = new System.Drawing.Size(70, 70);
             this.buttonSoundSwitch.TabIndex = 11;
-            this.buttonSoundSwitch.Text = "buttonSoundSwitch";
             this.buttonSoundSwitch.UseVisualStyleBackColor = true;
+            this.buttonSoundSwitch.Click += new System.EventHandler(this.buttonSoundSwitch_Click);
             // 
             // pictureBoxBackground
             // 

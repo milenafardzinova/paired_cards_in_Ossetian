@@ -10,20 +10,21 @@ namespace project_paired_cards_in_Ossetian
 {
     public class Card
     {
-        public string Name { get; set; }
-        public string Language { get; set; }
-        public Image Image { get; set; }
+        public string Name { get; private set; } 
+        public string Language { get; private set; }
+        public Image Image { get; private set; }  
+
         public bool IsOpened { get; private set; }  = false; 
         public bool IsMatched { get; private set; }
-        private string cardTheme;
-        private int cardLevel;
+        public string CardTheme { get; private set; }
+        public int CardLevel { get; private set; }
 
         public Card(string name,string language, string theme, int level) 
         { 
             Name= name;
             Language= language;
-            this.cardTheme = theme;
-            this.cardLevel = level;
+            CardTheme = theme;
+            CardLevel = level;
             string path = GetImagePath();
             //если существует путь к файлу, то выводить картинку, иначе показываем рубашку
             if (File.Exists(path))
@@ -37,8 +38,8 @@ namespace project_paired_cards_in_Ossetian
 
         public string GetImagePath()
         {
-            string theme = cardTheme;
-            int level = cardLevel;
+            string theme = CardTheme;
+            int level = CardLevel;
 
             if (level == 3 && Language == "ossetian")
             {
