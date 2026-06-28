@@ -54,12 +54,11 @@ namespace project_paired_cards_in_Ossetian
             dataGridViewField.Height = (cellSize * 4) + 3;
 
             string backPath = "images/cards/back.jpg";
+            Image back = Image.FromFile(backPath);
             for (int row = 0; row < 4; row++)
             {
                 for (int col = 0; col < 4; col++)
                 {
-                    Card card = gameField.GetCardAt(row, col);
-                    Image back = Image.FromFile(backPath);
                     dataGridViewField[col,row].Value = back;
                 }
             }
